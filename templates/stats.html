@@ -18,8 +18,8 @@
     <link rel="shorcut icon" href="../static/img/stonks.png">
 
     <link rel="preload" href="../static/css/bulma.min.css" as="style">
+    <link rel="preload" href="../static/js/statistics.js"  as="script">
     <link rel="preload" href="../static/js/secure.js"      as="script">
-    <link rel="preload" href="../static/js/script.js"      as="script">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <link rel="stylesheet" href="../static/css/bulma.min.css">
@@ -46,52 +46,44 @@
 </section>
 
 <script>
-var LABELS = {{ stats["raw_days"] | safe }}
-var DATA = {{ stats["raw_hits"] | safe }}
-
-window.onload = function() {
-    window.statsChart = new Chart(document.getElementById("replStats"), {
-        type: 'line',
-        scaleFontColor: "white",
-        data: {
-            labels: LABELS,
-            datasets: [{ 
-                data: DATA,
-                label: "Visit Count",
-                borderColor: "#3e95cd",
-                backgroudColor: "#3e95cd",
-                lineTension: 0,
-                fill: true
-            }]
-        },
-        options: {
-            legend: {
-                fontColor: "white",
-                labels: {
-                    fontColor: "whitesmoke"
-                }
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        fontColor: "white"
-                    },
-                    gridLines: {
-                        color: "#262626"
-                    }
-                }],
-                xAxes: [{
-                    ticks: {
-                        fontColor: "white"
-                    },
-                    gridLines: {
-                        color: "#262626"
-                    }
+    var DATA = {{ stats["raw_hits"] | safe }}
+    var LABELS = {{ stats["raw_days"] | safe }}
+    
+    window.onload = function() {
+        statsChart = new Chart(document.getElementById("replStats"), {
+            type: "line",
+            scaleFontColor: "white",
+            data: {
+                labels: LABELS,
+                datasets: [{ 
+                    data: DATA,
+                    fill: true,
+                    lineTension: 0,
+                    label: "Visit Count",
+                    borderColor: "#FF5AAC",
+                    backgroudColor: "#3E95CD"
                 }]
+            },
+            options: {
+                legend: {
+                    fontColor: "white",
+                    labels: {fontColor: "whitesmoke"}
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {fontColor: "white"},
+                        gridLines: {color: "#262626"}
+                    }],
+                    xAxes: [{
+                        ticks: {fontColor: "white"},
+                        gridLines: {color: "#262626"}
+                    }]
+                }
             }
-        }
-    });
-};
+        });
+
+        window.statsChart = statsChart;
+    };
 </script>
 </body>
 
