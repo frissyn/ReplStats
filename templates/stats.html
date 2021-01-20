@@ -31,21 +31,46 @@
     <script src="//cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
     <script src="//cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
     <script src="//cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.7"></script>
+
+	<style>
+		.box.darken {
+			color: whitesmoke;
+			border-color: black;
+			background-color: black;
+		}
+	</style>
 </head>
 
 <body>
 <section class="hero is-black is-fullheight">
     <div class="hero-body">
         <div class="container has-text-centered">
-            <h1 class="subtitle"> {{ name.title() }} Hits by Day</h1>
-            <h1 class="subtitle">
-                Best Day: <p style="color: green; display: inline;">{{ stats["max"] }}</p> Hits
-                <br>
-                Worst Day: <p style="color: red; display: inline;">{{ stats["min"] }}</p> Hits
-            </h1>
-            <canvas id="replStats" width="800" height="450"></canvas>
-            <br>
-            <a class="button is-dark is-fullwidth" href="/">Back to Search</a>
+			<div class="columns">
+				<div class="column">
+					<div class="box darken">
+						<h1 class="title">Hits By Day</h1>
+						<h3 class="subtitle"><b>{{ name }}</b></h3>
+					</div>
+				</div>
+				<div class="column">
+					<div class="box darken">
+						<h1 class="title">Best Day:</h1>
+						<h3 class="subtitle" style="color: green">{{ stats["max"] }} Hits</h3>
+					</div>
+				</div>
+				<div class="column">
+					<div class="box darken">
+						<h1 class="title">Worst Day:</h1>
+						<h3 class="subtitle" style="color: red">{{ stats["min"] }} Hits</h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="box darken">
+				<canvas id="replStats"></canvas>
+			</div>
+
+			<br><a class="button is-dark is-fullwidth" href="/">Back to Search</a>
         </div>
     </div>
 </section>
