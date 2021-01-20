@@ -15,8 +15,8 @@ def general_stats(url: str):
 
     vals = r.json()
     stats = {
-        "max": None,
-        "min": None,
+        "max": 0,
+        "min": 0,
         "raw_hits": [],
         "raw_days": [],
         "values": []
