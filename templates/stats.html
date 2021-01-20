@@ -45,32 +45,31 @@
 <section class="hero is-black is-fullheight">
     <div class="hero-body">
         <div class="container has-text-centered">
-			<div class="columns">
-				<div class="column">
-					<div class="box darken">
-						<h1 class="title">Hits By Day</h1>
-						<h3 class="subtitle"><b>{{ name }}</b></h3>
-					</div>
-				</div>
-				<div class="column">
-					<div class="box darken">
-						<h1 class="title">Best Day:</h1>
-						<h3 class="subtitle" style="color: green">{{ stats["max"] }} Hits</h3>
-					</div>
-				</div>
-				<div class="column">
-					<div class="box darken">
-						<h1 class="title">Worst Day:</h1>
-						<h3 class="subtitle" style="color: red">{{ stats["min"] }} Hits</h3>
-					</div>
-				</div>
-			</div>
+            <div class="columns">
+                <div class="column">
+                    <div class="box darken">
+                        <h1 class="title">Hits By Day</h1>
+                        <h3 class="subtitle"><b>{{ name }}</b></h3>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box darken">
+                        <h1 class="title">Best Day:</h1>
+                        <h3 class="subtitle" style="color: green">{{ stats["max"] }} Hits</h3>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box darken">
+                        <h1 class="title">Worst Day:</h1>
+                        <h3 class="subtitle" style="color: red">{{ stats["min"] }} Hits</h3>
+                    </div>
+                </div>
+            </div>
 
-			<div class="box darken">
-				<canvas id="replStats"></canvas>
-			</div>
-
-			<br><a class="button is-dark is-fullwidth" href="/">Back to Search</a>
+            <div class="box darken">
+                <canvas id="replStats"></canvas>
+            </div>
+            <br><a class="button is-dark is-fullwidth" href="/">Back to Search</a>
         </div>
     </div>
 </section>
