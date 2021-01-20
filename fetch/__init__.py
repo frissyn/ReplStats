@@ -27,7 +27,11 @@ def general_stats(url: str):
         stats["raw_hits"].append(valset["hits"])
         stats["raw_days"].append(valset["day"])
 
-    stats["max"] = max(stats["raw_hits"])
-    stats["min"] = min(stats["raw_hits"])
+    try:
+        stats["max"] = max(stats["raw_hits"])
+        stats["min"] = min(stats["raw_hits"])
+    except ValueError:
+        stats["max"] = None
+        stats["min"] = None
 
     return stats
