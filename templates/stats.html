@@ -34,9 +34,9 @@
         <div class="container has-text-centered">
             <h1 class="subtitle"> {{ name.title() }} Hits by Day</h1>
             <h1 class="subtitle">
-                Best Day: <p style="color: green">{{ stats["max"] }}</p> Hits
+                Best Day: <p style="color: green; display: inline;">{{ stats["max"] }}</p> Hits
                 <br>
-                Worst Day: <p style="color: red">{{ stats["min"] }}</p> Hits
+                Worst Day: <p style="color: red; display: inline;">{{ stats["min"] }}</p> Hits
             </h1>
             <canvas id="replStats" width="800" height="450"></canvas>
             <br>
