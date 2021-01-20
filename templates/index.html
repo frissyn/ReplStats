@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ReplStats</title>
+
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#ff5aac">
+    <meta name="robots"      content="index, follow">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search and view analytics data for web-hosted REPLs on Repl.it">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="ReplStats">
+    <meta property="og:site_name"   content="ReplStats">
+    <meta property="og:description" content="Search and view analytics data for web-hosted REPLs on Repl.it">
+
+    <link rel="shorcut icon" href="../static/img/stonks.png">
+
+    <link rel="preload" href="../static/css/bulma.min.css" as="style">
+    <link rel="preload" href="../static/js/secure.js"      as="script">
+    <link rel="preload" href="../static/js/script.js"      as="script">
+
+    <link rel="stylesheet" href="../static/css/bulma.min.css">
+
+    <script src="../static/js/secure.js" defer></script>
+    <script src="../static/js/script.js" defer></script>
+
+    <style>
+    input.is-dark {
+        color: whitesmoke !important;
+        background-color: #363636;
+    }
+    </style>
+</head>
+
+<body>
+<section class="hero is-black is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <img src="../static/img/stonks.png" alt="logo">
+            <h1 class="title">ReplStats&trade;</h1>
+            <h2 class="subtitle">Search analytics data for web-hosted REPLs.</h2>
+            <br>
+            <div class="columns is-centered">
+                <div class="column is-half">
+                <div class="field">
+                    <div class="field-label is-normal">
+                        <label class="label" style="text-align: left">Enter a Repl URL:</label>
+                    </div>
+
+                    <div class="control">
+                        <input type="text" class="input is-dark" onkeydown="search(event)">
+                    </div>
+                </div>
+
+                <article id="message" class="message is-danger" style="display: none">
+                    <div class="message-body">
+                        The URL you entered is in valid. Please enter another one.
+                    </div>
+                </article>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

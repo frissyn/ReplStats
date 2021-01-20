@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ReplStats - {{ name }}</title>
+
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#ff5aac">
+    <meta name="robots"      content="index, follow">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View analytics data for {{ name }}.">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="ReplStats - {{ name }}">
+    <meta property="og:site_name"   content="ReplStats - {{ name }}">
+    <meta property="og:description" content="View analytics data for {{ name }}.">
+
+    <link rel="shorcut icon" href="../static/img/stonks.png">
+
+    <link rel="preload" href="../static/css/bulma.min.css" as="style">
+    <link rel="preload" href="../static/js/secure.js"      as="script">
+    <link rel="preload" href="../static/js/script.js"      as="script">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link rel="stylesheet" href="../static/css/bulma.min.css">
+
+    <script src="../static/js/secure.js" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+
+<body>
+<section class="hero is-black is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="subtitle"> {{ name.title() }} Hits by Day</h1>
+            <canvas id="replStats" width="800" height="450"></canvas>
+            <br>
+            <a class="button is-dark is-fullwidth" href="/">Back to Search</a>
+        </div>
+    </div>
+</section>
+
+<script>
+var LABELS = {{ stats["raw_days"] | safe }}
+var DATA = {{ stats["raw_hits"] | safe }}
+
+window.onload = function() {
+    window.statsChart = new Chart(document.getElementById("replStats"), {
+        type: 'line',
+        scaleFontColor: "white",
+        data: {
+            labels: LABELS,
+            datasets: [{ 
+                data: DATA,
+                label: "Visit Count",
+                borderColor: "#3e95cd",
+                backgroudColor: "#3e95cd",
+                lineTension: 0,
+                fill: true
+            }]
+        },
+        options: {
+            legend: {
+                fontColor: "white",
+                labels: {
+                    fontColor: "whitesmoke"
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: "white"
+                    },
+                    gridLines: {
+                        color: "#262626"
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: "white"
+                    },
+                    gridLines: {
+                        color: "#262626"
+                    }
+                }]
+            }
+        }
+    });
+};
+</script>
+</body>
+
+</html>
