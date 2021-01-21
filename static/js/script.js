@@ -24,7 +24,13 @@ function search(e) {
         var value = e.currentTarget.value;
         var test = isValid(value);
 
+        control = document.getElementById("s-control");
+
         if (test) {
+            if (control) {
+                control.classList.toggle("is-loading");
+            }
+            
             window.location.replace(`/stats/${value}`);
         } else {
             message = document.getElementById("message");

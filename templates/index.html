@@ -32,6 +32,8 @@
         color: whitesmoke !important;
         background-color: #363636;
     }
+
+    .white {color: white}
     </style>
 </head>
 
@@ -47,16 +49,16 @@
                 <div class="column is-half">
                 <div class="field">
                     <div class="field-label is-normal">
-                        <label class="label" style="text-align: left" for="search">Enter a Repl URL:</label>
+                        <label class="label white" style="text-align: left" for="search">Enter a Repl URL:</label>
                     </div>
 
-                    <div class="control">
+                    <div id="s-control" class="control">
                         <input id="search" type="text" class="input is-dark" onkeydown="search(event)">
                     </div>
                 </div>
 
                 <article id="message" class="message is-danger" style="display: none">
-                    <div class="message-body content" style="text-align: left;">
+                    <div class="message-body content" style="text-align: left">
                         The URL you entered is invalid. Please enter another one.
                         <ul>
                             <li>Ports are allowed.</li>
