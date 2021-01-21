@@ -25,4 +25,4 @@ def stats(url: str):
         return flask.render_template("stats.html", name=url, stats=stats)
 
 
-app.run(host="0.0.0.0", port=8080, threaded=True, debug=True)
+app.run(host="0.0.0.0", port=8080, threaded=True, debug=False)

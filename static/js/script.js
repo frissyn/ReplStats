@@ -27,8 +27,8 @@ function search(e) {
         if (test) {
             window.location.replace(`/stats/${value}`);
         } else {
-            alert("The URL you entered is invalid.");
+            message = document.getElementById("message");
+            message.style.display = "inline-block";
         }
     }
 }
-
